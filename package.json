@@ -2,11 +2,18 @@
   "name": "pc-builder",
   "version": "0.1.0",
   "private": true,
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": "yarn lint-prettier"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:check": "eslint --ignore-path .eslintignore --ext .js,.jsx,.ts,.tsx .",
+    "prettier:check": "prettier --ignore-path .gitignore --write \"**/*.+(js|jsx|ts|tsx|json)\"",
+    "lint-prettier": "yarn lint:check && yarn prettier:check",
+    "husky:setup": "yarn husky install && yarn husky add .husky/pre-commit \"yarn lint-staged\""
   },
   "dependencies": {
     "autoprefixer": "10.4.16",
@@ -17,5 +24,12 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.3"
+  },
+  "devDependencies": {
+    "daisyui": "^3.7.7",
+    "eslint-config-prettier": "^9.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3"
   }
 }
