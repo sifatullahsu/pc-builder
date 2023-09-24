@@ -18,22 +18,22 @@ const Header = () => {
             <summary>Categories</summary>
             <ul className="p-2">
               <li>
-                <Link href="/">Processor</Link>
+                <Link href="/categories/65103e75882c71a28c4fee24">Processor</Link>
               </li>
               <li>
-                <Link href="/">Motherboard</Link>
+                <Link href="/categories/65103e7c882c71a28c4fee25">Motherboard</Link>
               </li>
               <li>
-                <Link href="/">RAM</Link>
+                <Link href="/categories/65103e86882c71a28c4fee26">RAM</Link>
               </li>
               <li>
-                <Link href="/">Power Supply Unit</Link>
+                <Link href="/categories/65103e91882c71a28c4fee27">PSU</Link>
               </li>
               <li>
-                <Link href="/">SSD</Link>
+                <Link href="/categories/65103e97882c71a28c4fee28">SSD</Link>
               </li>
               <li>
-                <Link href="/">Monitor</Link>
+                <Link href="/categories/65103e9d882c71a28c4fee29">Monitor</Link>
               </li>
             </ul>
           </details>
