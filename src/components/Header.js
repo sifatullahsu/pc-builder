@@ -39,7 +39,7 @@ const Header = () => {
           </details>
         </li>
         <li>
-          <Link href="/">PC Builder</Link>
+          <Link href="/pc-builder">PC Builder</Link>
         </li>
       </>
     )
