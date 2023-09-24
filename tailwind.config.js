@@ -6,6 +6,9 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
+    fontFamily: {
+      roboto: ['var(--font-roboto)']
+    },
     container: {
       center: true,
       padding: {
