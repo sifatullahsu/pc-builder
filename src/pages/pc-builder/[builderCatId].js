@@ -14,8 +14,5 @@ export const getServerSideProps = async context => {
 
   const res = await fetch(`${process.env.API_URL}/products/category/${id}`)
   const data = await res.json()
-
-  return {
-    props: { data }
-  }
+  return { props: { data } }
 }

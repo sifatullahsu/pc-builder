@@ -1,4 +1,5 @@
 import HeroSection from '@/components/Hero'
+import ProductGrid from '@/components/ProductGrid'
 import MainLayout from '@/layouts/MainLayout'
 
 const HomePage = ({ products, categories }) => {
@@ -8,6 +9,13 @@ const HomePage = ({ products, categories }) => {
   return (
     <>
       <HeroSection />
+      <div className="container py-14">
+        <div className="grid grid-cols-4 gap-5">
+          {products.map(product => (
+            <ProductGrid key={product._id} data={product} />
+          ))}
+        </div>
+      </div>
     </>
   )
 }
