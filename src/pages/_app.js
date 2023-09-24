@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import { SessionProvider } from 'next-auth/react'
 import { Roboto } from 'next/font/google'
 
 const roboto = Roboto({
@@ -7,17 +8,17 @@ const roboto = Roboto({
   subsets: ['latin']
 })
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps: { session, ...pageProps } }) {
   const getLayout = Component.getLayout ?? (page => page)
 
   return (
-    <>
+    <SessionProvider session={session}>
       <style jsx global>{`
         :root {
           --font-roboto: ${roboto.style.fontFamily};
         }
       `}</style>
       {getLayout(<Component {...pageProps} />)}
-    </>
+    </SessionProvider>
   )
 }
