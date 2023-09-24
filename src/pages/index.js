@@ -1,9 +1,10 @@
+import HeroSection from '@/components/Hero'
 import MainLayout from '@/layouts/MainLayout'
 
 const HomePage = () => {
   return (
     <>
-      <div>HomePage</div>
+      <HeroSection />
     </>
   )
 }
