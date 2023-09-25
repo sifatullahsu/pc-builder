@@ -1,4 +1,4 @@
-import { useSession } from 'next-auth/react'
+import { signIn, signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 import { BiLogoFirebase } from 'react-icons/bi'
 import { HiBars3BottomLeft } from 'react-icons/hi2'
@@ -41,6 +41,15 @@ const Header = () => {
         <li>
           <Link href="/pc-builder">PC Builder</Link>
         </li>
+        {session ? (
+          <li>
+            <button onClick={signOut}>Logout</button>
+          </li>
+        ) : (
+          <li>
+            <button onClick={signIn}>SignIn</button>
+          </li>
+        )}
       </>
     )
   }
@@ -48,9 +57,6 @@ const Header = () => {
   return (
     <section className="border-b">
       <div className="container">
-        {/* <button onClick={() => signIn()}>Sign in</button>
-      <button onClick={() => signOut()}>Sign out</button> */}
-
         <div className="navbar">
           <div className="md:navbar-start ">
             <div className="dropdown">
