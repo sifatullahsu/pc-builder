@@ -1,8 +1,8 @@
+import Products from '@/components/Products'
 import MainLayout from '@/layouts/MainLayout'
 
 const CategorySingle = ({ data }) => {
-  console.log(data)
-  return <div></div>
+  return <Products title={data?.title} data={data?.products} />
 }
 
 export default CategorySingle
@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 export const getStaticProps = async context => {
   const id = context.params.categoryId
 
-  const res = await fetch(`${process.env.API_URL}/products/category/${id}`)
+  const res = await fetch(`${process.env.API_URL}/categories/products/${id}`)
   const data = await res.json()
   return { props: { data } }
 }
