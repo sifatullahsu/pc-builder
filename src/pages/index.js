@@ -1,3 +1,4 @@
+import CategoryGrid from '@/components/CategoryGrid'
 import HeroSection from '@/components/Hero'
 import ProductGrid from '@/components/ProductGrid'
 import MainLayout from '@/layouts/MainLayout'
@@ -9,10 +10,21 @@ const HomePage = ({ products, categories }) => {
   return (
     <>
       <HeroSection />
+
       <div className="container py-14">
-        <div className="grid grid-cols-4 gap-5">
+        <h2 className="text-3xl font-bold text-center mb-10">Featured Products</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {products.map(product => (
             <ProductGrid key={product._id} data={product} />
+          ))}
+        </div>
+      </div>
+
+      <div className="container py-14">
+        <h2 className="text-3xl font-bold text-center mb-10">Featured Categories</h2>
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
+          {categories.map(category => (
+            <CategoryGrid key={category._id} data={category} />
           ))}
         </div>
       </div>

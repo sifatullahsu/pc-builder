@@ -5,3 +5,7 @@
 body {
   @apply font-roboto
 }
+
+.product:hover h3 {
+  @apply text-primary underline
+}
