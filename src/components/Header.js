@@ -1,11 +1,17 @@
 import { signIn, signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
+import toast from 'react-hot-toast'
 import { BiLogoFirebase } from 'react-icons/bi'
+import { BsChevronDown } from 'react-icons/bs'
 import { HiBars3BottomLeft } from 'react-icons/hi2'
 
 const Header = () => {
   const { data: session } = useSession()
-  // console.log(session)
+
+  const handlerSignOut = () => {
+    toast.success('Logout successfull.')
+    signOut({ redirect: true, callbackUrl: '/' })
+  }
 
   const items = () => {
     return (
@@ -13,37 +19,37 @@ const Header = () => {
         <li>
           <Link href="/">Home</Link>
         </li>
-        <li tabIndex={0}>
-          <details>
-            <summary>Categories</summary>
-            <ul className="p-2">
-              <li>
-                <Link href="/categories/65103e75882c71a28c4fee24">Processor</Link>
-              </li>
-              <li>
-                <Link href="/categories/65103e7c882c71a28c4fee25">Motherboard</Link>
-              </li>
-              <li>
-                <Link href="/categories/65103e86882c71a28c4fee26">RAM</Link>
-              </li>
-              <li>
-                <Link href="/categories/65103e91882c71a28c4fee27">PSU</Link>
-              </li>
-              <li>
-                <Link href="/categories/65103e97882c71a28c4fee28">SSD</Link>
-              </li>
-              <li>
-                <Link href="/categories/65103e9d882c71a28c4fee29">Monitor</Link>
-              </li>
-            </ul>
-          </details>
+        <li className="dropdown">
+          <label tabIndex={0}>
+            Categories <BsChevronDown />
+          </label>
+          <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+            <li>
+              <Link href="/categories/65103e75882c71a28c4fee24">Processor</Link>
+            </li>
+            <li>
+              <Link href="/categories/65103e7c882c71a28c4fee25">Motherboard</Link>
+            </li>
+            <li>
+              <Link href="/categories/65103e86882c71a28c4fee26">RAM</Link>
+            </li>
+            <li>
+              <Link href="/categories/65103e91882c71a28c4fee27">PSU</Link>
+            </li>
+            <li>
+              <Link href="/categories/65103e97882c71a28c4fee28">SSD</Link>
+            </li>
+            <li>
+              <Link href="/categories/65103e9d882c71a28c4fee29">Monitor</Link>
+            </li>
+          </ul>
         </li>
         <li>
           <Link href="/pc-builder">PC Builder</Link>
         </li>
         {session ? (
           <li>
-            <button onClick={signOut}>Logout</button>
+            <button onClick={handlerSignOut}>Logout</button>
           </li>
         ) : (
           <li>

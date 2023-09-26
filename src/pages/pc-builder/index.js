@@ -6,7 +6,7 @@ import toast from 'react-hot-toast'
 
 const PcBuilderPage = ({ data }) => {
   const { builder, setBuilder } = useData()
-  const isCompleted = Object.keys(builder).length !== 6
+  const isCompleted = Object.keys(builder).length <= 5
 
   const handlerRemove = id => {
     const updatedBuilder = { ...builder }

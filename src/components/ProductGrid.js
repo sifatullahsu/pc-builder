@@ -4,7 +4,7 @@ import { RxComponent1 } from 'react-icons/rx'
 
 const ProductGrid = ({ data, handlerBuilder = false }) => {
   return (
-    <div className="product shadow hover:shadow-lg p-5 relative">
+    <div className="product shadow hover:shadow-lg p-3 md:p-5 relative text-sm md:text-base">
       <Link href={`/products/${data?._id}`} className="after:absolute after:inset-0"></Link>
       <div className="h-full flex flex-col justify-between">
         <div>
@@ -21,7 +21,7 @@ const ProductGrid = ({ data, handlerBuilder = false }) => {
             </div>
           </div>
           <div className="space-y-3">
-            <h3 className="font-medium ">{data?.title}</h3>
+            <h3 className="font-medium">{data?.title}</h3>
             <div>৳ {data.price}</div>
           </div>
         </div>
