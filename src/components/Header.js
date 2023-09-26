@@ -20,10 +20,10 @@ const Header = () => {
           <Link href="/">Home</Link>
         </li>
         <li className="dropdown">
-          <label tabIndex={0}>
+          <label tabIndex={1}>
             Categories <BsChevronDown />
           </label>
-          <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+          <ul tabIndex={1} className="abcccc z-[50] menu p-2 lg:shadow bg-base-100 rounded-box w-52">
             <li>
               <Link href="/categories/65103e75882c71a28c4fee24">Processor</Link>
             </li>
@@ -69,14 +69,14 @@ const Header = () => {
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
                 <HiBars3BottomLeft fontSize={22} />
               </label>
-              <ul className="menu menu-sm dropdown-content shadow bg-base-100">{items()}</ul>
+              <ul className="menu menu-sm dropdown-content shadow bg-base-100 z-30">{items()}</ul>
             </div>
             <Link href="/" className="text-xl">
               <BiLogoFirebase className="inline text-[30px]" />
               PC BUILDER
             </Link>
           </div>
-          <div className="navbar-end hidden md:block text-right">
+          <div className="navbar-end hidden lg:block text-right">
             <ul className="menu menu-horizontal px-1 -mr-5">{items()}</ul>
           </div>
         </div>

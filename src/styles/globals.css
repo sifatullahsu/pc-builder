@@ -9,3 +9,9 @@ body {
 .product:hover h3 {
   @apply text-primary underline
 }
+
+@media (min-width: 1024px) {
+  .abcccc {
+    @apply dropdown-content;
+  }
+}

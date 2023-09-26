@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const HeroSection = () => {
   return (
     <div>
@@ -9,7 +11,9 @@ const HeroSection = () => {
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
               quasi. In deleniti eaque aut repudiandae et a id nisi.
             </p>
-            <button className="btn btn-primary">Get Started</button>
+            <Link href="/pc-builder" className="btn btn-primary">
+              Build Your Pc
+            </Link>
           </div>
         </div>
       </div>
