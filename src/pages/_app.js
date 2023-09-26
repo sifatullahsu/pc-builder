@@ -1,6 +1,8 @@
+import DataProvider from '@/contexts/DataProvider'
 import '@/styles/globals.css'
 import { SessionProvider } from 'next-auth/react'
 import { Roboto } from 'next/font/google'
+import { Toaster } from 'react-hot-toast'
 
 const roboto = Roboto({
   weight: ['400', '500', '700'],
@@ -13,12 +15,15 @@ export default function App({ Component, pageProps: { session, ...pageProps } })
 
   return (
     <SessionProvider session={session}>
-      <style jsx global>{`
-        :root {
-          --font-roboto: ${roboto.style.fontFamily};
-        }
-      `}</style>
-      {getLayout(<Component {...pageProps} />)}
+      <DataProvider>
+        <style jsx global>{`
+          :root {
+            --font-roboto: ${roboto.style.fontFamily};
+          }
+        `}</style>
+        {getLayout(<Component {...pageProps} />)}
+        <Toaster />
+      </DataProvider>
     </SessionProvider>
   )
 }

@@ -5,7 +5,7 @@ import { HiBars3BottomLeft } from 'react-icons/hi2'
 
 const Header = () => {
   const { data: session } = useSession()
-  console.log(session)
+  // console.log(session)
 
   const items = () => {
     return (
